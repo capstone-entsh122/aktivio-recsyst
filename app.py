@@ -90,11 +90,15 @@ def predict():
     sports_input = np.array([np.concatenate([motivation, healthconditions, [age], [gender], [location], [preferensi], [equipment]])]) 
     waktu_input = np.array([[waktu]])
     weekly_input = np.array([[levelfitness]])
+    
+    logging.debug(f"sports_input: {sports_input}, waktu_input: {waktu_input}, weekly_input: {weekly_input}")
 
     # Make predictions using the loaded model
     sports_pred, waktu_pred, weekly_pred = model.predict({'sports_input': sports_input,
                                                           'waktu_input': waktu_input,
                                                           'weekly_input': weekly_input})
+    
+    logging.debug(f"sports_pred: {sports_pred}, waktu_pred: {waktu_pred}, weekly_pred: {weekly_pred}")
 
     # Get the predicted class labels
     sports_labels = np.argsort(sports_pred)[-3:][::-1]
