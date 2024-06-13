@@ -64,14 +64,14 @@ def predict():
 
     # Preprocess the input data
     motivation = mlb_mot.transform([data["motivation"]])[0]
-    healthconditions = mlb_health.transform([data["health_conditions"]])[0]
+    healthconditions = mlb_health.transform([data["diseaseHistory"]])[0]
     age = age_mapping[data['age']]
     gender = gender_mapping[data['gender']]
-    location = location_mapping[data['location']]
-    preferensi = preferensi_mapping[data['preferensi']]
+    location = location_mapping[data['placePreference']]
+    preferensi = preferensi_mapping[data['socialPreference']]
     equipment = equipment_mapping[data['equipment']]
-    waktu = waktu_mapping[data['waktu']]
-    levelfitness = levelfitness_mapping[data['levelfitness']]
+    waktu = waktu_mapping[data['availableTime']]
+    levelfitness = levelfitness_mapping[data['fitnessLevel']]
 
     # Create the input features array
     sports_input = np.array([np.concatenate([motivation, healthconditions, [age], [gender], [location], [preferensi], [equipment]])]) 
