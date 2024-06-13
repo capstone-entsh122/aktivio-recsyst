@@ -101,8 +101,8 @@ def predict():
     logging.debug(f"sports_pred: {sports_pred}, waktu_pred: {waktu_pred}, weekly_pred: {weekly_pred}")
 
     # Get the predicted class labels
-    sports_labels = np.argsort(sports_pred)[-3:][::-1]
-    sports_labels = sports_labels.flatten().tolist()
+    sports_labels = np.argsort(sports_pred[0])[-3:][::-1]
+    # sports_labels = sports_labels.flatten().tolist()
     waktu_label = np.argmax(waktu_pred)
     weekly_label = 1 if weekly_pred > 0.5 else 0
     
