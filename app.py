@@ -84,6 +84,7 @@ def predict():
     equipment = equipment_mapping[data['equipment']]
     waktu = waktu_mapping[data['availableTime']]
     levelfitness = levelfitness_mapping[data['fitnessLevel']]
+    logging.debug(f"motivation: {motivation}, healthconditions: {healthconditions}, age: {age}, gender: {gender}, location: {location}, preferensi: {preferensi}, equipment: {equipment}, waktu: {waktu}, levelfitness: {levelfitness}")
 
     # Create the input features array
     sports_input = np.array([np.concatenate([motivation, healthconditions, [age], [gender], [location], [preferensi], [equipment]])]) 
