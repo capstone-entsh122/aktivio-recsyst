@@ -73,8 +73,8 @@ def predict():
     data = request.json
 
     # Preprocess the input data
-    motivation = mlb_mot.transform([data["motivation"]])[0]
-    healthconditions = mlb_health.transform([data["diseaseHistory"]])[0]
+    motivation = np.array(mlb_mot.transform([data["motivation"]])[0])
+    healthconditions = np.array(mlb_health.transform([data["diseaseHistory"]])[0])
     age = age_mapping(data['age'])
     gender = gender_mapping[data['gender']]
     location = location_mapping[data['placePreference']]
