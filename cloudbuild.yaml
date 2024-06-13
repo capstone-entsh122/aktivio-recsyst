@@ -1,0 +1,8 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/aktivio-development/aktivio-recsystem', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/aktivio-development/aktivio-recsystem']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'rec-system', '--image', 'gcr.io/aktivio-development/aktivio-recsystem', '--region', 'asia-southeast2', '--platform', 'managed']
