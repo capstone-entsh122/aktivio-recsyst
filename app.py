@@ -16,7 +16,17 @@ with open("mlb_health.pkl", "rb") as file:
     mlb_health = pickle.load(file)
 
 # Define the mappings used for encoding the features
-age_mapping = {"15 to 18": 0, "19 to 25": 1, "26 to 30": 2, "31 to 39": 3, "40 and above": 4}
+def age_mapping(age):
+    if 15 <= age <= 18:
+        return 0
+    elif 19 <= age <= 25:
+        return 1
+    elif 26 <= age <= 30:
+        return 2
+    elif 31 <= age <= 39:
+        return 3
+    elif age >= 40:
+        return 4
 gender_mapping = {"female": 0, "male": 1}
 location_mapping = {"dalam": 0, "luar": 1}
 preferensi_mapping = {"sendiri": 0, "dengan orang lain": 1}
@@ -65,7 +75,7 @@ def predict():
     # Preprocess the input data
     motivation = mlb_mot.transform([data["motivation"]])[0]
     healthconditions = mlb_health.transform([data["diseaseHistory"]])[0]
-    age = age_mapping[data['age']]
+    age = age_mapping(data['age'])
     gender = gender_mapping[data['gender']]
     location = location_mapping[data['placePreference']]
     preferensi = preferensi_mapping[data['socialPreference']]
