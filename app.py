@@ -117,8 +117,8 @@ def predict():
     # Prepare the response
     response = {
         'sports_recommendations': sports_recommendations,
-        'waktu_recommendation': waktu_recommendation,
-        'weekly_recommendation': weekly_recommendation
+        'time_recommendations': waktu_recommendation,
+        'weekly_recommendations': weekly_recommendation
         }
 
     return jsonify(response)
