@@ -98,8 +98,11 @@ def predict():
     waktu_label = np.argmax(waktu_pred)
     weekly_label = 1 if weekly_pred > 0.5 else 0
     
+    print(f"sports_labels: {sports_labels}")
+    print(f"Type of sports_labels: {type(sports_labels)}")
+    
     # Map the predicted labels to their corresponding values
-    sports_recommendations = [label_mapping[label] for label in sports_labels.tolist()]
+    sports_recommendations = [label_mapping[int(label)] for label in sports_labels.tolist()]
     waktu_recommendation = waktu_label_mapping[waktu_label]
     weekly_recommendation = weekly_label_mapping[weekly_label]
 
