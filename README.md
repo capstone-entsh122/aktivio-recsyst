@@ -1,3 +1,4 @@
+
 # Sports Recommendation System
 
 This is a Flask-based sports recommendation system that suggests sports activities, time duration, and weekly frequency based on user preferences and characteristics. The system uses a pre-trained TensorFlow model to make predictions.
@@ -16,13 +17,13 @@ This is a Flask-based sports recommendation system that suggests sports activiti
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/sports-recommendation-system.git
+   git clone https://github.com/capstone-entsh122/aktivio-recsyst.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd sports-recommendation-system
+   cd aktivio-recsyst
    ```
 
 3. Install the required dependencies:
@@ -77,6 +78,36 @@ This is a Flask-based sports recommendation system that suggests sports activiti
      "weeklyRecommendations": "2x"
    }
    ```
+
+   The possible output values for each recommendation are as follows:
+
+   - Sports Recommendations:
+     - "Sepakbola/Futsal/Minisoccer"
+     - "Badminton/Tennis (olahraga raket)"
+     - "Basket"
+     - "Voli"
+     - "Renang"
+     - "Cycling"
+     - "Senam/Aerobik"
+     - "Walking/Jogging/Running"
+     - "Gym"
+     - "Pilates/Yoga"
+     - "Dance/Zumba"
+     - "Billiard"
+     - "Softball/Kasti/Cricket"
+     - "Hiking"
+     - "Golf"
+
+   - Weekly Recommendations:
+     - "1x"
+     - "2x"
+
+   - Time Recommendations:
+     - "<15 menit"
+     - "15-30 menit"
+     - "30-45 menit"
+     - "45-60 menit"
+     - ">60 menit"
 
 ## Deployment
 
